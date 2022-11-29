@@ -7,6 +7,11 @@ for i in str(number):
         sum += int(i)
 print(f'{number} -> {sum}')
 
+number = float(input('Введите вещественное число: '))
+numbers = map(int, str(number).replace('.', ''))
+numbers_sum = sum(numbers)
+print(f'{number} -> {numbers_sum}')
+
 # 15 Напишите программу, которая принимает на вход число N и выдает набор произведений чисел от 1 до N.
 print('\n    Задача 15. Напишите программу, которая принимает на вход число N и выдает набор произведений чисел от 1 до N.')
 from math import prod
