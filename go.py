@@ -1,21 +1,15 @@
-def find_if_second(some_list, text):
-    index = 0
-    flag = False
-    for line in some_list:
-        if line == text:
-            if flag == False:
-                flag = True
-            else:
-                return index
-        index += 1
-    return -1
-some_list = ["qwe", "asd", "zxc", "qwe", "ertqwe"]
-print(some_list, find_if_second(some_list, "qwe"))
-some_list = ["йцу", "фыв", "ячс", "цук", "йцукен", "йцу"]
-print(some_list, find_if_second(some_list, "йцу"))
-some_list = ["йцу", "фыв", "ячс", "цук", "йцукен"]
-print(some_list, find_if_second(some_list, "йцу"))
-some_list = ["123", "234", 123, "567"]
-print(some_list, find_if_second(some_list, "123"))
-some_list = []
-print(some_list, find_if_second(some_list, "123"))
+print('26. Задайте число. Составьте список чисел Фибоначчи, в том числе для отрицательных индексов.')
+def get_fibonacci(number):
+    if number < 1:
+        return [0]
+    fibonacci = [1, 0, 1]
+    first = 0
+    second = 1
+    for n in range(number-1):
+        current = first + second
+        fibonacci.append(current)
+        fibonacci.insert(0, ((-1) ** (n+1)) * current)
+        first, second = second, current
+    return fibonacci
+number = int(input('Введите число: '))
+print(number, '->', get_fibonacci(number))
