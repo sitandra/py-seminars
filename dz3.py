@@ -48,7 +48,11 @@ def get_fibonacci(number):
     for n in range(number-1):
         current = first + second
         fibonacci.append(current)
-        fibonacci.insert(0, ((-1) ** (n + 1)) * current)
+        #fibonacci.insert(0, ((-1) ** (n + 1)) * current) #bad idea
+        if n % 2 == 0:
+            fibonacci.insert(0, (-1) * current)
+        else:
+            fibonacci.insert(0, current)
         first, second = second, current
     return fibonacci
 number = int(input('Введите число: '))
