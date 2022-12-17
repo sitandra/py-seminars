@@ -11,15 +11,17 @@ def echo(text: str) -> str:
 
 def get_action() -> str:
     return get_data('Введите действие')
-def get_surname() -> str:
-    return get_data('Введите фамилию')
-def get_name() -> str:
-    return get_data('Введите имя')
-def get_patronimic() -> str:
-    return get_data('Введите отчество')
-def get_birthdate() -> str:
-    return get_data('Введите дату рождения')
-def get_phone() -> str:
-    return get_data('Введите номер телефона')
-def get_find_text() -> str:
-    return get_data('Введите искомую информацию')
+def get_surname(storage: str) -> str:
+    return get_data(f'{storage}: Введите фамилию')
+def get_name(storage: str) -> str:
+    return get_data(f'{storage}: Введите имя')
+def get_patronimic(storage: str) -> str:
+    return get_data(f'{storage}: Введите отчество')
+def get_birthdate(storage: str) -> str:
+    return get_data(f'{storage}: Введите дату рождения')
+def get_phone(storage: str) -> str:
+    return get_data(f'{storage}: Введите номер телефона')
+def get_find_text(storage: str) -> str:
+    return get_data(f'{storage}: Введите искомую информацию')
+def get_storage() -> str:
+    return get_data('Введите формат хранилища данных')
